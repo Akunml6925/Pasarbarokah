@@ -102,7 +102,24 @@
             </ul>
             <p class="text-center text-body-secondary">&copy; 2023 pasar barokah</p>
           </footer>
-
+          
+          <script type="modul">
+          import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js';
+          import { 
+            getAuth,
+            signInwithPopup
+            signOut,
+            onAuthstateChanged
+            GoogleAuthprovider,
+          } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
+          import {konfigurasiFirebase } from '/konfigurasi-firebase.js'
+          
+          const app = initializeApp(konfigurasiFirebase):
+          const provider = new GoogleAuthprovider();
+          const auth = getAuth();
+          
+          
+         </script>
 </body>
 
 </html>
