@@ -94,9 +94,9 @@
           </div>
 <footer class="py-3 bg-dark-subtle mt-auto">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-      <li class="nav-item"><a href="/pasarcemerlang/index.html" class="nav-link px-2 text-body-secondary">Beranda</a></li>
+      <li class="nav-item"><a href="/pasarbarokah/index.html" class="nav-link px-2 text-body-secondary">Beranda</a></li>
       <li class="nav-item"><a href="#" id="link-login-penjual" class="nav-link px-2 text-body-secondary">Login Penjual</a></li>
-      <li class="nav-item"><a href="/pasarcemerlang/tentang.html" class="nav-link px-2 text-body-secondary">Tentang</a></li>
+      <li class="nav-item"><a href="/pasarbarokah/tentang.html" class="nav-link px-2 text-body-secondary">Tentang</a></li>
     </ul>
     <p class="text-center text-body-secondary">&copy; 2023 Pasar Cemerlang</p>
   </footer>
@@ -110,7 +110,7 @@
       onAuthStateChanged,
       GoogleAuthProvider,
     } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
-    import { konfigurasiFirebase } from '/pasarcemerlang/konfigurasi-firebase.js';
+    import { konfigurasiFirebase } from '/pasarbarokah/konfigurasi-firebase.js';
 
     const app = initializeApp(konfigurasiFirebase);
     const provider = new GoogleAuthProvider();
@@ -127,7 +127,7 @@
             const user = result.user;
             // IdP data available using getAdditionalUserInfo(result)
             // ...
-            location.replace('/pasarcemerlang/penjual/index.html');
+            location.replace('/Pasarbarokah/penjual/index.html');
           }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
