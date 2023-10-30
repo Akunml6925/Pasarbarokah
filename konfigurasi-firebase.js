@@ -1,5 +1,5 @@
 export const konfigurasiFirebase = {
-  apiKey: "AIzaSyA-wvBGzlYI9NHjVZBq7wbUHtEWrN3AFI8",
+apiKey: "AIzaSyA-wvBGzlYI9NHjVZBq7wbUHtEWrN3AFI8",
   authDomain: "pasarbarokah-56d6c.firebaseapp.com",
   projectId: "pasarbarokah-56d6c",
   storageBucket: "pasarbarokah-56d6c.appspot.com",
