@@ -115,16 +115,13 @@
 
 
       kumpulanBarang.forEach((element) => {
-
         elDaftarBarang.append(
-          <div class="card">
-             <img src="https://picsum.photos/100/60" class="card-img-top">
-             <div class="card-body">
-             <span>element.nama+','+ elemen.harga + '</span>'+
-             </div> + 
-             </div>
-          '
-
+          '<div class="card">' +
+          '<img src="https://picsum.photos/100/60" class="card-img-top">' +
+          '<div class="card-body">' +
+          '<span>' + element.nama + ', ' + element.harga + '</span>' +
+          '</div>' +
+          '</div>'
         );
       });
 
