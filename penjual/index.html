@@ -103,7 +103,9 @@
     const app = initializeApp(konfigurasiFirebase);
     const db = getFirestore(app);
     
-    $(document).ready(async function() {
+    $(document).ready(async function(event) {
+      event.preventDefault();
+      
       let namaBarang = $("#nama-barang");
       let hargaBarang = $("#harga-barang");
       
