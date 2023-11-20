@@ -92,7 +92,7 @@
     const db = getFirestore(app);
 
     async function ambilDaftarBarang() {
-      const querySnapshot = await getDocd(collection(db, "barang"));
+      const querySnapshot = await getDocs(collection(db, "barang"));
       let daftarBarang = [];
 
       querySnapshot.forEach((doc) => {
