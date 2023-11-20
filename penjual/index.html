@@ -30,6 +30,8 @@
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body class="d-flex-column h-100">
@@ -63,21 +65,23 @@
           <form>
             <div class="mb-3">
               <label class="form-label">Nama</label>
-              <input type="text" class="from-control">
+              <input type="text" class="from-control" id="nama-barang">
             </div>
             <div class="mb-3">
               <label class="form-label">Harga</label>
-              <input type="text" class="from-control">
+              <input type="text" class="from-control" id="harga">
             </div>
             <div class="mb-3">
               <label class="form-label">Foto / Gambar</label>
               <input type="file" class="from-control">
             </div>
             <div class="mb-3">
-              <button type="submit" class="btn btn-primary">simpan</button>
+              <button type="submit" class="btn btn-primary" id="tombol-simpan">simpan</button>
             </div>
             <form>
-    </div>
+              
+        <p id="pesan"></p>
+      </div>
 
 
   </div>
@@ -98,18 +102,28 @@
 
     const app = initializeApp(konfigurasiFirebase);
     const db = getFirestore(app);
-
-    try {
-      const barangRef = await addDoc(collection(db, "hutan"), {
-        foto: "",
-        nama: "pulpen",
-        harga: 2000
+    
+    $(document).ready(async function() {
+      let namaBarang = $("#nama-barang");
+      let hargaBarang = $("#harga-barang");
+      
+      $("#tombol-simpan").click(async function() {
+             try { 
+      const barangRef = await addDoc(collection(db,"barang"), {
+        foto:"",
+        nama:namaBarang.val(),
+        harga:hargaBarang.val(),
       });
+      
+      $("#pesan").html("Berhasil menambah barang " + namaBarang.val());
+      $("#pesan").html("Gagal menambah barang " + namaBarang.val()) +
+     } catch (err) {
+      });
+     
 
-      document.getElementById("contoh").innerHTML = barangRef.id;
-    } catch (e) {
-      document.getElementById("contoh").innerHTML = e;
-    }
+       
+     }
+    });
   </script>
 </body>
 

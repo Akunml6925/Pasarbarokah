@@ -62,16 +62,14 @@
 
           <div class="container-fluid">
             <div class="row" id="daftar -barang">
-
-  <div class
-
-
             </div>
-          </div>
+         </div>
+        </div>
+         </div>
           <footer class="py-3 bg-dark-subtle mt-auto">
             <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-              <li class="nav-item"><a href="/Pasarbarokah/index.html" class="nav-link px-2 text-body-secondary">Beranda</a></li>
-              <li class="nav-item"><a href="#" id="penjual" class="nav-link px-2 text-body-secondary">Login Penjual</a></li>
+              <li class="nav-item"><a href="/pasarbarokah/index.html" class="nav-link px-2 text-body-secondary">Beranda</a></li>
+              <li class="nav-item"><a href="#"id="-link-login-penjual class="nav-link px-2 text-body-secondary">Login Penjual</a></li>
               <li class="nav-item"><a href="/Pasarbarokah/tentang.html" class="nav-link px-2 text-body-secondary">Tentang</a></li>
             </ul>
             <p class="text-center text-body-secondary">&copy; 2023 Pasar Barokahh</p>
@@ -79,7 +77,7 @@
 
           <script type="module">
             import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js';
-            import {
+           import {
               getAuth,
               signInWithPopup,
               signOut,
@@ -87,7 +85,8 @@
               GoogleAuthProvider,
             } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js';
             import { konfigurasiFirebase } from '/Pasarbarokah/konfigurasi-firebase.js';
-            import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase.js";
+            import { getFirestore, collection, getDocd } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
+            
             const app = initializeApp(konfigurasiFirebase);
             const provider = new GoogleAuthProvider();
             const auth = getAuth();
@@ -96,34 +95,37 @@
             async function ambilDaftarBarang() {
               const querySnapshot = await getDocd(collection(db, "barang"));
               let daftarBarang = [];
+              
               querySnapshot.forEach((doc) => {
                 daftarBarang.push({
                   id: doc.id,
-                  nama: doc.data().nama
-                  harga: doc.data().harag
+            nama: doc.data().
+            nama: harga: doc.data(). harga,
                   foto: doc.data().foto
+                  doc.data().foto
                 });
               });
 
               retrun daftarBarang;
             }
-            //console.log(`${doc.id} => ${doc.data()}`);
-            }
+        
 
             $(document).ready(async function() {
               let elDaftarBarang = $("#daftar-barang");
 
-              let kumpulanBarang = ambilDaftarBarang();
+              let kumpulanBarang = await ambilDaftarBarang();
+              
 
-              kumpulanBarang.forEach((element)) => {
-                elDaftarBarang
+              kumpulanBarang.forEach((element) => {
+              
+                elDaftarBarang.append(
              <div class="card">
              <img src="https://picsum.photos/100/60" class="card-img-top">
              <div class="card-body">
              <span>element.nama+','+ elemen.harga + '</span>'+
              </div> + 
              </div>'
-                  /div>'
+           
                 );
               });
 
