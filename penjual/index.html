@@ -99,7 +99,7 @@
       import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js';
       import { konfigurasiFirebase } from '/Pasarbarokah/konfigurasi-firebase.js';
       import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
-      import { getStorage, ref } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-store.js";
+      import { getStorage, ref uploadBytes} from "https://www.gstatic.com/firebasejs/10.4.0/firebase-store.js";
 
       const app = initializeApp(konfigurasiFirebase);
       const db = getFirestore(app);
